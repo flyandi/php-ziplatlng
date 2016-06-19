@@ -1,0 +1,19 @@
+{
+    "name": "flyandi/ziplatlng",
+    "type": "library",
+    "description": "A quick and easy zip code to latitude/longitude converter",
+    "keywords": [],
+    "homepage": "https://github.com/flyandi/php-ziplatng",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Andreas Schwarz",
+            "email": "flyandi@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "files": ["src/ziplatlng.php"]
+    },
+    "minimum-stability": "dev"
+}
