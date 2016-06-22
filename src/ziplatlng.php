@@ -59,9 +59,9 @@ function ZIPLatLng($zipCode) {
                 fclose($handle);
 
                 return (object) [
-                    "zip" => @$parts[0],
-                    "latitude" => @$parts[1],
-                    "longitude" => @$parts[2]
+                    "zip" => trim(@$parts[0]),
+                    "latitude" => trim(@$parts[1]),
+                    "longitude" => trim(@$parts[2])
                 ];
             }
         }
