@@ -1,4 +1,4 @@
-<?php
+v<?php
 
 /**
  * flyandi:php-ziplatlng
@@ -50,18 +50,20 @@ function ZIPLatLng($zipCode) {
     $handle = @fopen(ZIPLATLNG_DATABASE, "r");
 
     if ($handle) {
-        while (($buffer = fgets($handle, 128)) !== false) {
-
-            $parts = explode(",", $buffer);
+        while (($parts = fgetcsv($handle, 1024)) !== false) {
 
             if(trim(@$parts[0]) == $zipCode) {
 
                 fclose($handle);
 
+                //48638,Saginaw,Saginaw,MI,43.422,-84.097
+
                 return (object) [
                     "zip" => trim(@$parts[0]),
-                    "latitude" => trim(@$parts[1]),
-                    "longitude" => trim(@$parts[2])
+                    "city" => trim(@$parts[1]),
+                    "state" => trim(@$parts[2]),
+                    "latitude" => trim(@$parts[3]),
+                    "longitude" => trim(@$parts[4])
                 ];
             }
         }
